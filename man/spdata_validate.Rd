@@ -9,6 +9,8 @@ spdata_validate(path, type = "image", s3_client = NULL)
 \arguments{
 \item{path}{Path to the spatial data file to validate}
 
+\item{type}{SpatialData element type to be validated}
+
 \item{s3_client}{An optional S3 client}
 }
 \value{
@@ -16,4 +18,10 @@ spdata_validate(path, type = "image", s3_client = NULL)
 }
 \description{
 Validate the images/ component of a spatial data file
+}
+\examples{
+sd_zip <- system.file("extdata", "spatialdata-v0.2.zarr.zip", package = "SpatialData.validate")
+sd <- withr::local_tempfile()
+unzip(sd_zip, exdir = sd)
+spdata_validate(file.path(sd, "images/blobs_multiscale_image"))
 }

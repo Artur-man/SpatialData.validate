@@ -1,14 +1,14 @@
 #' Validate the images/ component of a spatial data file
 #' 
 #' @param path Path to the spatial data file to validate
-#' @poaram type SpatialData element type to be validated
+#' @param type SpatialData element type to be validated
 #' @param s3_client An optional S3 client
 #' 
 #' @return `TRUE` if the spatial data file is valid, otherwise an error is thrown
 #' 
 #' @export
 #'
-#' @exampless
+#' @examples
 #' sd_zip <- system.file("extdata", "spatialdata-v0.2.zarr.zip", package = "SpatialData.validate")
 #' sd <- withr::local_tempfile()
 #' unzip(sd_zip, exdir = sd)
